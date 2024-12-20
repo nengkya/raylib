@@ -10,9 +10,17 @@ int main() {
 
 	  a framebuffer is a portion of a computer's random-access memory (RAM)
 	  that stores the data for a video frame, or image, to be displayed on the screen
-	
+	*/
+	BeginDrawing(); 
+
+	/*void ClearBackground(Color color); set background color (framebuffer clear color)
+	  #define RAYWHITE (Color){ 245, 245, 245, 255 }
 	*/
 
+
+
+
+	
 
     }
 
