@@ -1,7 +1,4 @@
-typedef struct Vector2 {
-    float x;
-    float y;
-} Vector2;  
+typedef struct Vector2 {float x; float y;} Vector2;  
   
 https://github.com/raysan5/raylib/blob/master/src/raymath.h  
   
