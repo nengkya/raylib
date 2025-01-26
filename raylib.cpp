@@ -7,6 +7,18 @@ int main() {
 
 	raylib::InitWindow(1280, 720, "HaGa");
 
+	/*
+	typedef struct Texture2D {
+		unsigned int id //OpenGL texture ID
+		int width		//Texture width
+		int height		//Texture height
+		int mipmaps		//number of mipmaps (used for level of detail)
+  						//original texture: 512x512
+						//mipmap level 1: 256x256
+						//mipmap level 2: 128x128
+		int format		//pixel format (RGBA, grayscale)
+	} Texture
+	*/
 	raylib::Texture background = raylib::LoadTexture("background.png"), car = raylib::LoadTexture("car.png");
 
 	float carPositionX = - car.width;
