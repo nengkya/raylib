@@ -51,7 +51,6 @@ int main() {
 		raylib::DrawText(fpsCharPointer, 190, 200, 20, raylib::GREEN);
 
 		/*raylib::DrawText(raylib::TextFormat("aaaaa %d", fps), 190, 200, 20, raylib::GREEN);*/
-
 		raylib::DrawTexture(car, carPositionX, 630 - car.height, raylib::BLUE);
 
 		/*
