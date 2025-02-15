@@ -13,8 +13,9 @@ int main() {
 	*/
 	BeginDrawing(); 
 
-	/*void ClearBackground(Color color); set background color (framebuffer clear color)
-	  #define RAYWHITE (Color){ 245, 245, 245, 255 }
+	/*
+ 	void ClearBackground(Color color); set background color (framebuffer clear color)
+	#define RAYWHITE (Color){ 245, 245, 245, 255 }
 	*/
 	ClearBackground(RAYWHITE);
 
