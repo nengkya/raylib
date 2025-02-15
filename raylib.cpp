@@ -23,7 +23,7 @@ int main() {
 	*/
 	raylib::Texture background = raylib::LoadTexture("background.png"), car = raylib::LoadTexture("car.png");
 
-	raylib::SetTargetFPS(5);
+	raylib::SetTargetFPS(6);
 
 	int fps = raylib::GetFPS();
 
