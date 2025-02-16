@@ -1,5 +1,3 @@
-https://dev.epicgames.com/documentation/en-us/unreal-engine/understanding-the-basics-of-unreal-engine
-  
 typedef struct Vector2 {float x; float y;} Vector2;  
   
 https://github.com/Pakz001/Raylib-Examples/blob/master/Beginners_-_Vector2.c  
