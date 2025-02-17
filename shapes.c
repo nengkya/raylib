@@ -28,8 +28,11 @@ int main() {
         /*void DrawPoly(Vector2 center, int sides, float radius, float rotation, Color color);*/
         DrawPoly((Vector2){screenWidth / 4.0f * 3, 330}, 6, 80, rotation, BROWN);
         DrawPoly((Vector2){500, 300}, 6, 100, 45.0f, RED);/*rotate 45 degree left*/
-		/*void DrawPolyLinesEx(Vector2 center, int sides, float radius, float rotation, float lineThick, Color color);*/
-		DrawPolyLinesEx((Vector2){ screenWidth/4.0f*3, 330 }, 6, 85, rotation, 6, MAGENTA);
+	/*void
+	DrawPolyLinesEx(Vector2 center, int sides,
+	float radius, float rotation, float lineThick, Color color);
+	*/
+	DrawPolyLinesEx((Vector2){ screenWidth/4.0f*3, 330 }, 6, 85, rotation, 6, MAGENTA);
 
 
 
