@@ -1,4 +1,4 @@
-https://github.com/raysan5/raylib/blob/master/examples/shapes/shapes_basic_shapes.c  
+https://github.com/raysan5/raylib/blob/master/examples/core/core_window_flags.c  
   
 git remote set-url origin https://[token]@github.com/your_repository  
   
