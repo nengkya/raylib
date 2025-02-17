@@ -1,6 +1,6 @@
 https://chatgpt.com/c/67b2d48b-fc4c-8006-bfa4-0431be5c2e20  
   
-https://github.com/raysan5/raylib/blob/master/examples/core/core_window_flags.c  
+https://github.com/raysan5/raylib/blob/master/examples/core/core_2d_camera.c  
   
 git remote set-url origin https://[token]@github.com/your_repository  
   
