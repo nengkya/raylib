@@ -57,6 +57,14 @@ int main() {
     while(!WindowShouldClose()) {
 
 		if (IsKeyDown(KEY_RIGHT)) player.x += 2;
+
+		BeginMode2D(camera);
+		DrawRectangle(-6000, 320, 13000, 8000, DARKGRAY);
+		DrawRectangle(60, 320, 130, 80, LIME);
+
+		camera.zoom += GetMouseWheelMove() * 0.05;
+
+
 	
         EndDrawing();
 
