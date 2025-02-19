@@ -5,54 +5,47 @@ int main() {
 
     const int screenWidth = 1000, screenHeight = 500;
     InitWindow(screenWidth, screenHeight, "mouse zoom - Wildan Rhomad Wijanarko");
-<<<<<<< HEAD
     SetTargetFPS(60);
-||||||| fbd35fb
-	SetTargetFPS(60);
-=======
-	Camera2D camera;
-	SetTargetFPS(60);
->>>>>>> bc204a9716b3e17e1402904d6d1c9b56c31ab958
+    Camera2D camera;
+    SetTargetFPS(60);
 
     while(!WindowShouldClose()) {
 
-<<<<<<< HEAD
-	/* typedef enum {KEY_ONE = 49; key: 1} KeyboardKey*/
+	/*typedef enum {KEY_ONE = 49; key: 1} KeyboardKey*/
 
+	/*Vector2 GetMouseDelta(void); get mouse delta between frames*/
+	Vector2 delta = GetMouseDelta();
+	/*
+	scale vector (multiply by value)
+	RMAPI Vector2 Vector2Scale(Vector2 v, float scale) {
+	    Vector2 result = {v.x*scale, v.y*scale}; return result;
+	}
+	*/
+	delta = Vector2Scale(delta, -1 / camera.zoom);
+
+	/*
+	RMAPI Vector2 Vector2Add(Vector2 v1, Vector2 v2) {
+	    Vector2 result = { v1.x + v2.x, v1.y + v2.y };
+	    return result;
+	}
+	*/
+	camera.target = Vector2Add(camera.target, delta);
+	GetMouseWheelMove();
 	/*
 	Vector2 GetScreenToWorld2D(Vector2 position, Camera2D camera);
 	get the world space position for a 2d camera screen space position
 	*/
-||||||| fbd35fb
-		/* typedef enum {KEY_ONE = 49; key: 1} KeyboardKey*/
+	Vector2 GetScreenToWorld2D(GetMousePosition(), camera);
+	camera.offset = GetMousePosition();
 
-		/*Vector2 GetScreenToWorld2D(Vector2 position, Camera2D camera); get the world space position for a 2d camera screen space position*/
-=======
-		/*typedef enum {KEY_ONE = 49; key: 1} KeyboardKey*/
->>>>>>> bc204a9716b3e17e1402904d6d1c9b56c31ab958
+	/*start drawing*/
+	BeginDrawing();
+	BeginMode2D(camera);
 
-		/*Vector2 GetMouseDelta(void); get mouse delta between frames*/
-		Vector2 delta = GetMouseDelta();
-		/*
-		RMAPI Vector2 Vector2Add(Vector2 v1, Vector2 v2) {
-			Vector2 result = { v1.x + v2.x, v1.y + v2.y };
-			return result;
-		}
-		*/
-		camera.target = Vector2Add(camera.target, delta);
+	/*draw the 3D grid, rotated 90 degrees and centered around 0,0*/
 
-		camera.offset = GetMousePosition();
-
-		/*Vector2 GetScreenToWorld2D(Vector2 position, Camera2D camera); get the world space position for a 2D camera screen space position*/
-
-
-		/*start drawing*/
-		BeginDrawing();
-		BeginMode2D(camera);
-
-		/*draw the 3D grid, rotated 90 degrees and centered around 0,0*/
-
-		DrawCircle(GetScreenWidth() / 2, GetScreenHeight() / 2, 50, MAROON);
+	DrawCircle(GetScreenWidth() / 2, GetScreenHeight() / 2, 50, MAROON);
+	EndMode2D();
 
         EndDrawing();
 
