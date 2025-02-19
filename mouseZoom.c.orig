@@ -4,32 +4,21 @@
 int main() {
 
     const int screenWidth = 1000, screenHeight = 500;
-    InitWindow(screenWidth, screenHeight, "mouse zoom - Wildan Rhomad Wijanarko");
-<<<<<<< HEAD
-    SetTargetFPS(60);
-||||||| fbd35fb
-	SetTargetFPS(60);
-=======
 	Camera2D camera;
-	SetTargetFPS(60);
->>>>>>> bc204a9716b3e17e1402904d6d1c9b56c31ab958
-
+    InitWindow(screenWidth, screenHeight, "mouse zoom - Wildan Rhomad Wijanarko");
+    SetTargetFPS(60);
     while(!WindowShouldClose()) {
 
-<<<<<<< HEAD
-	/* typedef enum {KEY_ONE = 49; key: 1} KeyboardKey*/
+		/* typedef enum {KEY_ONE = 49; key: 1} KeyboardKey*/
 
-	/*
-	Vector2 GetScreenToWorld2D(Vector2 position, Camera2D camera);
-	get the world space position for a 2d camera screen space position
-	*/
-||||||| fbd35fb
+		/*
+		Vector2 GetScreenToWorld2D(Vector2 position, Camera2D camera);
+		get the world space position for a 2d camera screen space position
+		*/
 		/* typedef enum {KEY_ONE = 49; key: 1} KeyboardKey*/
 
 		/*Vector2 GetScreenToWorld2D(Vector2 position, Camera2D camera); get the world space position for a 2d camera screen space position*/
-=======
 		/*typedef enum {KEY_ONE = 49; key: 1} KeyboardKey*/
->>>>>>> bc204a9716b3e17e1402904d6d1c9b56c31ab958
 
 		/*Vector2 GetMouseDelta(void); get mouse delta between frames*/
 		Vector2 delta = GetMouseDelta();
