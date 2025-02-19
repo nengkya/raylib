@@ -1,6 +1,4 @@
-https://gist.github.com/DrBellubins/e966682a999322e70896e8db46dfcc4f  
-  
-https://github.com/raysan5/raylib/blob/master/examples/core/core_2d_camera.c  
+https://github.com/raysan5/raylib/blob/master/examples/core/core_2d_camera_mouse_zoom.c   
   
 git remote set-url origin https://[token]@github.com/your_repository  
   
