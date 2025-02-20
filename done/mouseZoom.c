@@ -6,7 +6,20 @@ int main() {
     const int screenWidth = 1000, screenHeight = 500;
     InitWindow(screenWidth, screenHeight, "mouse zoom - Wildan Rhomad Wijanarko");
     SetTargetFPS(60);
+    /*
+    typedef struct Camera2D {
+		Vector2 offset;	camera offset (displacement from target in screen-space)
+		Vector2 target;	camera target (focus point in world-space)
+		float rotation;	camera rotation in degrees
+		float zoom;	camera zoom (scaling), should not be 0
+    } Camera2D;
+	*/
     Camera2D camera;
+	/*must be initialize (Vector2) or error: expected expression before ‘{’ token*/
+	camera.offset	= (Vector2){0, 0};
+	camera.target	= (Vector2){1, 1};
+	camera.rotation = 1;
+	camera.zoom		= 1;
     SetTargetFPS(60);
 
     while(!WindowShouldClose()) {

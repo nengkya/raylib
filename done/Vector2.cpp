@@ -9,7 +9,6 @@ int main() {
 
     InitWindow(screenWidth, screenHeight, "Vector2");
 
-
     while(!WindowShouldClose()) {
 
         position2 = GetMousePosition();

@@ -30,27 +30,27 @@ int main() {
 
     /*	
     typedef struct Vector3 {
-	float x;
-	float y;
-	float z;
+		float x;
+		float y;
+		float z;
     } Vector3;
     */
     Vector3 cubePosition;
 
     while(!WindowShouldClose()) {
 
-	BeginDrawing();
-	BeginMode3D(camera);
+		BeginDrawing();
+		BeginMode3D(camera);
 
-	/*void DrawCube(Vector3 position, float width, float height, float length, Color color);*/
-	DrawCube(cubePosition, 2, 2, 2, RED);
-	
-	/*void DrawGrid(int slices, float spacing); centered at (0, 0, 0)*/
+		/*void DrawCube(Vector3 position, float width, float height, float length, Color color);*/
+		DrawCube(cubePosition, 2, 2, 2, RED);
+		
+		/*void DrawGrid(int slices, float spacing); centered at (0, 0, 0)*/
 
-	DrawText("Free camera default controls:", 20, 20, 10, BLACK);
+		DrawText("Free camera default controls:", 20, 20, 10, BLACK);
 
-	EndMode3D();
-	EndDrawing();
+		EndMode3D();
+		EndDrawing();
 
     }
 
