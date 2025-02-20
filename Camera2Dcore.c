@@ -7,29 +7,29 @@ int main() {
     const int screenWidth = 1000, screenHeight = 500;
     /*
     typedef struct Rectangle {
-	float x;
-	float y;
-	float width;
-	float height;
-    } Rectangle;
+		float x;
+		float y;
+		float width;
+		float height;
+		} Rectangle;
     */
     Rectangle player = {400, 280, 40, 40}, buildings[MAX_BUILDINGS];
     int spacing = 0;
     /*	
     typedef struct Color {
-	unsigned char r;  0-255
-	unsigned char g;  0-255
-	unsigned char b;  0-255
-	unsigned char a;  alpha (opacity) 0 - 255
+		unsigned char r;  0-255
+		unsigned char g;  0-255
+		unsigned char b;  0-255
+		unsigned char a;  alpha (opacity) 0 - 255
     } Color;
     */
     Color buildColors[MAX_BUILDINGS];
     /*
     typedef struct Camera2D {
-	Vector2 offset;	camera offset (displacement from target in screen-space)
-	Vector2 target;	camera target (focus point in world-space)
-	float rotation;	camera rotation in degrees
-	float zoom;	camera zoom (scaling), should not be 0
+		Vector2 offset;	camera offset (displacement from target in screen-space)
+		Vector2 target;	camera target (focus point in world-space)
+		float rotation;	camera rotation in degrees
+		float zoom;	camera zoom (scaling), should not be 0
     } Camera2D;
     */
     Camera2D camera;
