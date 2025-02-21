@@ -1,4 +1,4 @@
-https://chatgpt.com/c/67b59763-85f0-8006-8b46-6a429000fffd  
+chatGPT(https://chatgpt.com/c/67b59763-85f0-8006-8b46-6a429000fffd)  
   
 [Camera3D Free](https://github.com/raysan5/raylib/blob/master/examples/core/core_3d_camera_free.c)  
   
