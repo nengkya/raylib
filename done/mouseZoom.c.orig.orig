@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "raylib.h"	 /*InitWindow();*/
 #include "raymath.h" /*Vector2Add();*/
 
@@ -6,25 +7,52 @@ int main() {
     const int screenWidth = 1000, screenHeight = 500;
     InitWindow(screenWidth, screenHeight, "mouse zoom - Wildan Rhomad Wijanarko");
     SetTargetFPS(60);
+<<<<<<< HEAD:mouseZoom.c
+    /*
+    typedef struct Camera2D {
+		Vector2 offset;	camera offset (displacement from target in screen-space)
+		Vector2 target;	camera target (focus point in world-space)
+		float rotation;	camera rotation in degrees
+		float zoom;	camera zoom (scaling), should not be 0
+    } Camera2D;
+    */
+||||||| d2d4d9e:mouseZoom.c
+=======
+    /*
+    typedef struct Camera2D {
+		Vector2 offset;	camera offset (displacement from target in screen-space)
+		Vector2 target;	camera target (focus point in world-space)
+		float rotation;	camera rotation in degrees
+		float zoom;	camera zoom (scaling), should not be 0
+    } Camera2D;
+	*/
+>>>>>>> 58eeb0e6f7cb1dce4df7ba43bae68a217d70e7ee:done/mouseZoom.c
     Camera2D camera;
+<<<<<<< HEAD:mouseZoom.c
+	camera.offset	= (Vector2){1, 1};
+	camera.target	= (Vector2){2, 2};
+	camera.rotation = 15;
+	camera.zoom		=  3;
+||||||| d2d4d9e:mouseZoom.c
+=======
+	/*must be initialize (Vector2) or error: expected expression before ‘{’ token*/
+	camera.offset	= (Vector2){0, 0};
+	camera.target	= (Vector2){1, 1};
+	camera.rotation = 1;
+	camera.zoom		= 1;
+>>>>>>> 58eeb0e6f7cb1dce4df7ba43bae68a217d70e7ee:done/mouseZoom.c
     SetTargetFPS(60);
 
     while(!WindowShouldClose()) {
 
-<<<<<<< HEAD
 		/*typedef enum {KEY_ONE = 49; key: 1} KeyboardKey*/
-<<<<<<< HEAD
-
-=======
 	
->>>>>>> 77b4831c3dc8e79270b967c823a856e435a45194
 		/*Vector2 GetMouseDelta(void); get mouse delta between frames*/
 		Vector2 delta = GetMouseDelta();
 		/*
 		scale vector (multiply by value)
 		RMAPI Vector2 Vector2Scale(Vector2 v, float scale) {
-<<<<<<< HEAD
-			Vector2 result = {v.x*scale, v.y*scale}; return result;
+			Vector2 result = {v.x * scale, v.y * scale}; return result;
 		}
 		*/
 		delta = Vector2Scale(delta, -1 / camera.zoom);
@@ -33,17 +61,7 @@ int main() {
 		RMAPI Vector2 Vector2Add(Vector2 v1, Vector2 v2) {
 			Vector2 result = { v1.x + v2.x, v1.y + v2.y };
 			return result;
-=======
 		    Vector2 result = {v.x*scale, v.y*scale}; return result;
-		}
-		*/
-		delta = Vector2Scale(delta, -1 / camera.zoom);
-	
-		/*
-		RMAPI Vector2 Vector2Add(Vector2 v1, Vector2 v2) {
-		    Vector2 result = { v1.x + v2.x, v1.y + v2.y };
-		    return result;
->>>>>>> 77b4831c3dc8e79270b967c823a856e435a45194
 		}
 		*/
 		camera.target = Vector2Add(camera.target, delta);
@@ -52,22 +70,9 @@ int main() {
 		Vector2 GetScreenToWorld2D(Vector2 position, Camera2D camera);
 		get the world space position for a 2d camera screen space position
 		*/
-		Vector2 GetScreenToWorld2D(GetMousePosition(), camera);
+		Vector2 mouseWorldPos = GetScreenToWorld2D(GetMousePosition(), camera);
 		camera.offset = GetMousePosition();
-<<<<<<< HEAD
 
-		/*start drawing*/
-		BeginDrawing();
-		BeginMode2D(camera);
-
-		/*draw the 3D grid, rotated 90 degrees and centered around 0,0*/
-
-		DrawCircle(GetScreenWidth() / 2, GetScreenHeight() / 2, 50, MAROON);
-		EndMode2D();
-
-        EndDrawing();
-=======
-	
 		/*start drawing*/
 		BeginDrawing();
 		BeginMode2D(camera);
@@ -76,10 +81,59 @@ int main() {
 	
 		DrawCircle(GetScreenWidth() / 2, GetScreenHeight() / 2, 50, MAROON);
 		EndMode2D();
-	
 	    EndDrawing();
->>>>>>> 77b4831c3dc8e79270b967c823a856e435a45194
-||||||| d240705
+
+    }
+
+}
+||||||| d2d4d9e
+=======
+#include "raylib.h"	 /*InitWindow();*/
+#include "raymath.h" /*Vector2Add();*/
+
+int main() {
+
+    const int screenWidth = 1000, screenHeight = 500;
+    InitWindow(screenWidth, screenHeight, "mouse zoom - Wildan Rhomad Wijanarko");
+    SetTargetFPS(60);
+<<<<<<<< HEAD:mouseZoom.c
+    /*
+    typedef struct Camera2D {
+		Vector2 offset;	camera offset (displacement from target in screen-space)
+		Vector2 target;	camera target (focus point in world-space)
+		float rotation;	camera rotation in degrees
+		float zoom;	camera zoom (scaling), should not be 0
+    } Camera2D;
+    */
+|||||||| d2d4d9e:mouseZoom.c
+========
+    /*
+    typedef struct Camera2D {
+		Vector2 offset;	camera offset (displacement from target in screen-space)
+		Vector2 target;	camera target (focus point in world-space)
+		float rotation;	camera rotation in degrees
+		float zoom;	camera zoom (scaling), should not be 0
+    } Camera2D;
+	*/
+>>>>>>>> 58eeb0e6f7cb1dce4df7ba43bae68a217d70e7ee:done/mouseZoom.c
+    Camera2D camera;
+<<<<<<<< HEAD:mouseZoom.c
+	camera.offset	= (Vector2){1, 1};
+	camera.target	= (Vector2){2, 2};
+	camera.rotation = 15;
+	camera.zoom		=  3;
+|||||||| d2d4d9e:mouseZoom.c
+========
+	/*must be initialize (Vector2) or error: expected expression before ‘{’ token*/
+	camera.offset	= (Vector2){0, 0};
+	camera.target	= (Vector2){1, 1};
+	camera.rotation = 1;
+	camera.zoom		= 1;
+>>>>>>>> 58eeb0e6f7cb1dce4df7ba43bae68a217d70e7ee:done/mouseZoom.c
+    SetTargetFPS(60);
+
+    while(!WindowShouldClose()) {
+
 		/*typedef enum {KEY_ONE = 49; key: 1} KeyboardKey*/
 	
 		/*Vector2 GetMouseDelta(void); get mouse delta between frames*/
@@ -87,15 +141,16 @@ int main() {
 		/*
 		scale vector (multiply by value)
 		RMAPI Vector2 Vector2Scale(Vector2 v, float scale) {
-		    Vector2 result = {v.x*scale, v.y*scale}; return result;
+			Vector2 result = {v.x * scale, v.y * scale}; return result;
 		}
 		*/
 		delta = Vector2Scale(delta, -1 / camera.zoom);
-	
+
 		/*
 		RMAPI Vector2 Vector2Add(Vector2 v1, Vector2 v2) {
-		    Vector2 result = { v1.x + v2.x, v1.y + v2.y };
-		    return result;
+			Vector2 result = { v1.x + v2.x, v1.y + v2.y };
+			return result;
+		    Vector2 result = {v.x*scale, v.y*scale}; return result;
 		}
 		*/
 		camera.target = Vector2Add(camera.target, delta);
@@ -104,9 +159,9 @@ int main() {
 		Vector2 GetScreenToWorld2D(Vector2 position, Camera2D camera);
 		get the world space position for a 2d camera screen space position
 		*/
-		Vector2 GetScreenToWorld2D(GetMousePosition(), camera);
+		Vector2 mouseWorldPos = GetScreenToWorld2D(GetMousePosition(), camera);
 		camera.offset = GetMousePosition();
-	
+
 		/*start drawing*/
 		BeginDrawing();
 		BeginMode2D(camera);
@@ -115,48 +170,9 @@ int main() {
 	
 		DrawCircle(GetScreenWidth() / 2, GetScreenHeight() / 2, 50, MAROON);
 		EndMode2D();
-	
 	    EndDrawing();
-=======
-	/*typedef enum {KEY_ONE = 49; key: 1} KeyboardKey*/
-
-	/*Vector2 GetMouseDelta(void); get mouse delta between frames*/
-	Vector2 delta = GetMouseDelta();
-	/*
-	scale vector (multiply by value)
-	RMAPI Vector2 Vector2Scale(Vector2 v, float scale) {
-	    Vector2 result = {v.x*scale, v.y*scale}; return result;
-	}
-	*/
-	delta = Vector2Scale(delta, -1 / camera.zoom);
-
-	/*
-	RMAPI Vector2 Vector2Add(Vector2 v1, Vector2 v2) {
-	    Vector2 result = { v1.x + v2.x, v1.y + v2.y };
-	    return result;
-	}
-	*/
-	camera.target = Vector2Add(camera.target, delta);
-	GetMouseWheelMove();
-	/*
-	Vector2 GetScreenToWorld2D(Vector2 position, Camera2D camera);
-	get the world space position for a 2d camera screen space position
-	*/
-	Vector2 GetScreenToWorld2D(GetMousePosition(), camera);
-	camera.offset = GetMousePosition();
-
-	/*start drawing*/
-	BeginDrawing();
-	BeginMode2D(camera);
-
-	/*draw the 3D grid, rotated 90 degrees and centered around 0,0*/
-
-	DrawCircle(GetScreenWidth() / 2, GetScreenHeight() / 2, 50, MAROON);
-	EndMode2D();
-
-    EndDrawing();
->>>>>>> b0bce64e64fbb227a8579631108e331d519de54f
 
     }
 
 }
+>>>>>>> 58eeb0e6f7cb1dce4df7ba43bae68a217d70e7ee

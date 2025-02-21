@@ -18,9 +18,10 @@ int main() {
 	3. used for top-down games, strategy games, and 2D/3D hybrid visuals
 	*/
     Camera3D camera;
-	camera.position   = (Vector3){10.0f, 10.0f, 10.0f};
-    camera.target	  = (Vector3){ 1,     1,     1   };	/*camera looking at point. bigger is left. negative is right*/
-    camera.up		  = (Vector3){ 3.0f, 11.0f,  7.0f};	/*camera up vector (rotation towards target)*/
+    camera.position   = (Vector3){10.0f, 10.0f, 10.0f};
+	/*camera looking at point. bigger is left. negative is right*/
+    camera.target	  = (Vector3){ 1,     1,     1   };
+	camera.up 		  = (Vector3){ 3.0f, 11.0f,  7.0f};	/*camera up vector (rotation towards target)*/
     camera.fovy		  = 35;								/*camera field-of-view Y, lesser is bigger*/
     camera.projection = CAMERA_PERSPECTIVE;
 	/*
@@ -52,3 +53,4 @@ int main() {
     }
 
 }
+
