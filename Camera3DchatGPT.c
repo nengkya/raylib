@@ -1,17 +1,14 @@
 #include "raylib.h"
 
 int main(void) {
-    // Initialization
     InitWindow(800, 600, "raylib Camera3D Example");
-
     Camera3D camera = { 0 };
-    camera.position = (Vector3){ 0.0f, 10.0f, 10.0f };  // Camera position
-    camera.target = (Vector3){ 0.0f, 0.0f, 0.0f };      // Look at point
-    camera.up = (Vector3){ 0.0f, 1.0f, 0.0f };          // Up direction
-    camera.fovy = 45.0f;                                // Field of view
-    camera.projection = CAMERA_PERSPECTIVE;            // Perspective mode
-
-    SetCameraMode(camera, CAMERA_FREE); // Free camera mode
+    camera.position = (Vector3){ 0.0f, 10.0f, 10.0f };
+    camera.target = (Vector3){ 0.0f, 0.0f, 0.0f };     /*look at point*/
+    camera.up = (Vector3){ 0.0f, 1.0f, 0.0f };         /*up direction*/
+    camera.fovy = 45.0f;
+    camera.projection = CAMERA_PERSPECTIVE;
+    /*SetCameraMode(camera, CAMERA_FREE); free camera mode*/
 
     while (!WindowShouldClose()) {
         UpdateCamera(&camera, 1); // Update camera movement
