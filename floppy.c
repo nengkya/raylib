@@ -10,7 +10,7 @@ typedef struct Floppy {
 } Floppy;
 
 static const int screenHeight = 450;
-static Floppy floppy = FLOPPY_RADIUS;
+static Floppy floppy;
 
 
 
@@ -34,7 +34,7 @@ void InitGame() {
 int main() {
 
     const int screenWidth = 1000, screenHeight = 500;
-    InitWindow(screenWidth, screenHeight, "Wildan Rhomad Wijanarko");
+    InitWindow(screenWidth, screenHeight, "Floppy v2 - Wildan Rhomad Wijanarko");
     /*SetTargetFPS(60);*/
 	InitGame();
 
