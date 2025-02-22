@@ -3,7 +3,7 @@
 
 int main() {
 
-    const int screenWidth = 1000, screenHeight = 500;
+    const int screenWidth = 1400, screenHeight = 650;
     InitWindow(screenWidth, screenHeight, "Wildan Rhomad Wijanarko");
     SetTargetFPS(60);
 
