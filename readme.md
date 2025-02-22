@@ -1,4 +1,4 @@
-https://github.com/raysan5/raylib-games/tree/master/classics/src  
+https://github.com/raysan5/raylib-games/blob/master/classics/src/gold_fever.c    
   
 git remote set-url origin https://[token]@github.com/your_repository  
   
