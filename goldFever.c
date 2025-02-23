@@ -10,7 +10,7 @@ typedef struct Enemy  {Vector2 position; Vector2 speed; int radius; int radiusBo
 } Rectangle;*/
 typedef struct Home {Rectangle rectangle; bool active; bool save; Color color;} Home;
 
-static const int screenWidth = 1440, screenHeight = 650;
+static const int screenWidth = 1300, screenHeight = 650;
 static Player player; static Enemy enemy; static Home home;
 
 
@@ -24,8 +24,10 @@ void InitGame() {
 	enemy.radius	   = 20;
 	enemy.radiusBounds = 150;
 
-
-
+	home.rectangle.width  = 50;
+	home.rectangle.height = 50;
+	home.rectangle.x	  = GetRandomValue(0, screenWidth  - home.rectangle.width);
+	home.rectangle.y	  = GetRandomValue(0, screenHeight - home.rectangle.height);
 
 }
 
@@ -48,57 +50,32 @@ void UpdateGame() {
 
 void DrawGame() {
 
+	DrawRectangleLines(home.rectangle.x, home.rectangle.y,
+		home.rectangle.width, home.rectangle.height, BLUE);
 
+	DrawCircleLines(enemy.position.x, enemy.position.y, enemy.radiusBounds, RED);
 
-
-
-
-
+	/*
+	draw a color-filled circle (Vector version)
+	void DrawCircleV(Vector2 center, float radius, Color color);
+	*/
+	DrawCircleV( enemy.position,  enemy.radius, MAROON);
+	DrawCircleV(player.position, player.radius, GRAY);
 
 }
-
-
-
-
-
 
 
 void UpdateDrawFrame() {
-
 	UpdateGame();
 	DrawGame();
-
 }
 
-
-
-
-
-
-
-
-
-
-
-
 int main() {
-
     InitWindow(screenWidth, screenHeight, "Gold Fever Classic - Wildan Rhomad Wijanarko");
     SetTargetFPS(60);
 	InitGame();
-
-
-
-
-
-
-
-
     while(!WindowShouldClose()) {
-
 		UpdateDrawFrame();
         EndDrawing();
-
     }
-
 }
