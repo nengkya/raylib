@@ -22,7 +22,10 @@ void InitGame() {
 
 void UpdateGame() {
 
-/*bool CheckCollisionCircles(Vector2 center1, float radius1, Vector2 center2, float radius2); check collision between two circles*/
+/*
+bool CheckCollisionCircles(Vector2 center1, float radius1,
+	Vector2 center2, float radius2); check collision between two circles
+*/
 
 
 }
@@ -30,16 +33,21 @@ void UpdateGame() {
 
 void DrawGame() {
 
-	/*void DrawLineV(Vector2 startPosition, Vector2 endPosition, Color color); draw a line (using gl lines)*/
+	/*
+	draw (using gl lines
+	void DrawLineV(Vector2 startPosition, Vector2 endPosition, Color color);
+	*/
 	for (int i = 0; i < screenWidth / SQUARE_SIZE + 1; i++) {
 
-		DrawLineV((Vector2){SQUARE_SIZE * i + offset.x/2, offset.y/2}, (Vector2){SQUARE_SIZE * i + offset.x/2, screenHeight - offset.y / 2}, LIGHTGRAY);
+		DrawLineV((Vector2){SQUARE_SIZE * i + offset.x/2, offset.y/2},
+				  (Vector2){SQUARE_SIZE * i + offset.x/2, screenHeight - offset.y / 2}, LIGHTGRAY);
 	
 	}
 
 	for (int i = 0; i < screenHeight / SQUARE_SIZE + 1; i++) {
 
-		DrawLineV((Vector2){offset.x / 2, SQUARE_SIZE*i + offset.y / 2}, (Vector2){screenWidth - offset.x / 2, SQUARE_SIZE*i + offset.y / 2}, LIGHTGRAY);
+		DrawLineV((Vector2){offset.x / 2, SQUARE_SIZE*i + offset.y / 2},
+				  (Vector2){screenWidth - offset.x / 2, SQUARE_SIZE*i + offset.y / 2}, LIGHTGRAY);
 
 	}
 
