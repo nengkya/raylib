@@ -41,7 +41,11 @@ void UpdateGame() {
 	if (IsKeyDown(KEY_UP))	  player.position.y -= player.speed.y;
 	if (IsKeyDown(KEY_DOWN))  player.position.y += player.speed.y;
 
+	if (player.position.x > enemy.position.x) enemy.position.x += enemy.speed.x;
+	if (player.position.x < enemy.position.x) enemy.position.x -= enemy.speed.x;
 
+	if (player.position.y > enemy.position.y) enemy.position.y += enemy.speed.y;
+	if (player.position.y < enemy.position.y) enemy.position.y -= enemy.speed.y;
 
 
 
