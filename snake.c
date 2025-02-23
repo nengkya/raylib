@@ -4,10 +4,13 @@
 
 typedef struct Snake {Vector2 position; Vector2 size; Vector2 speed; Color color;} Snake;
 
+typedef struct Food  {Vector2 position; Vector2 size; bool active; Color color;} Food;
+
 static const int screenWidth = 1300, screenHeight = 650;
 static Vector2 offset;
 static Snake snake[SNAKE_LENGTH];
 static int tailCounter = 1;
+static Food fruit;
 
 void InitGame() {
 
@@ -21,6 +24,11 @@ void InitGame() {
         snake[i].color	  = DARKBLUE;
     
 	}
+
+	fruit.size  = (Vector2){SQUARE_SIZE, SQUARE_SIZE};
+    fruit.color = SKYBLUE;
+
+
 
 }
 
@@ -51,7 +59,7 @@ void DrawGame() {
 	for (int i = 0; i < tailCounter; i++)
 		DrawRectangleV(snake[i].position, snake[i].size, snake[i].color);
 
-
+	DrawRectangleV(fruit.position, fruit.size, fruit.color);
 
 }
 
@@ -62,7 +70,7 @@ void UpdateDrawFrame() {
 }
 
 int main() {
-    InitWindow(screenWidth, screenHeight, "Gold Fever Classic - Wildan Rhomad Wijanarko");
+    InitWindow(screenWidth, screenHeight, "Snake - Wildan Rhomad Wijanarko");
     SetTargetFPS(60);
 	InitGame();
     while(!WindowShouldClose()) {
