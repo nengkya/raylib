@@ -1,6 +1,4 @@
-https://chatgpt.com/c/67bb3995-467c-8006-a7cb-06382de160ef  
-  
-https://github.com/raysan5/raylib-games/blob/master/classics/src/snake.c    
+https://github.com/raysan5/raylib-games/blob/master/classics/src/arkanoid.c  
   
 git remote set-url origin https://[token]@github.com/your_repository  
   
