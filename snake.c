@@ -1,13 +1,6 @@
 #include "raylib.h"
 #define SQUARE_SIZE 31
 
-/*typedef struct Rectangle {
-    float x;      X position of the top-left corner
-    float y;      Y position of the top-left corner
-    float width;
-    float height;
-} Rectangle;*/
-
 static const int screenWidth = 1300, screenHeight = 650;
 static Vector2 offset;
 
