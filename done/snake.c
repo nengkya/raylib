@@ -7,7 +7,7 @@ typedef struct Snake {Vector2 position; Vector2 size; Vector2 speed; Color color
 typedef struct Food  {Vector2 position; Vector2 size; bool active; Color color;} Food;
 
 static const int screenWidth = 1300, screenHeight = 650;
-static Vector2 offset;
+static Vector2 offset, snakePosition;
 static Snake snake[SNAKE_LENGTH];
 static int tailCounter = 1;
 static Food fruit;
