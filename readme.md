@@ -1,4 +1,4 @@
-https://github.com/raysan5/raylib-games/blob/master/classics/src/snake.c    
+https://github.com/raysan5/raylib-games/blob/master/classics/src/arkanoid.c  
   
 git remote set-url origin https://[token]@github.com/your_repository  
   
