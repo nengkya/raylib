@@ -1,4 +1,5 @@
 #include <raylib.h>
+#include <math.h>
 #define PLAYER_MAX_LIFE  5
 #define LINES_OF_BRICKS  5
 #define BRICKS_PER_LINE 20
@@ -15,20 +16,24 @@ static Vector2 brickSize;
 
 void InitGame() {
 
+	/*1350 / 2 = 675*/
 	player.position = (Vector2){screenWidth / 2, screenHeight * 7 / 8};
     player.size		= (Vector2){ screenWidth / 10, 20};
     player.life		= PLAYER_MAX_LIFE;
 
+	/*675*/
 	ball.position = (Vector2){player.position.x, player.position.y - player.size.y / 2 - ball.radius };
     ball.radius   = 7;
 	ball.active	  = true;
 
+	/*1350 / 20 = 68*/
 	brickSize = (Vector2){GetScreenWidth() / BRICKS_PER_LINE, 40 };
 	int initialDownPosition = 50;
 	
 	for (int i = 0; i < LINES_OF_BRICKS; i++) {
         for (int j = 0; j < BRICKS_PER_LINE; j++) {
 
+			/*0 x 68*/
             brick[i][j].position = (Vector2){j * brickSize.x + brickSize.x / 2,
 				i * brickSize.y + initialDownPosition };
 
@@ -49,10 +54,12 @@ void UpdateGame() {
 		player.position.x = screenWidth - player.size.x/2;
  
 	ball.speed = (Vector2){0, -5};
+	/*675 + 0*/
 	ball.position.x += ball.speed.x;
 	ball.position.y += ball.speed.y;
 
-	for (int i = 0; i < LINES_OF_BRICKS; i++) {
+	for (int i = 0; i < LINES_OF_BRICKS; i++)
+	{
 		for (int j = 0; j < BRICKS_PER_LINE; j++)
 		{
 			if (brick[i][j].active)
@@ -65,9 +72,10 @@ void UpdateGame() {
 					brick[i][j].active = false;
 					ball.speed.y *= -1;
 				}
-				// Hit above
-				else if (((ball.position.y + ball.radius) >= (brick[i][j].position.y - brickSize.y/2)) &&
-						((ball.position.y + ball.radius) < (brick[i][j].position.y - brickSize.y/2 + ball.speed.y)) &&
+				/*hit above*/
+				else if (((ball.position.y + ball.radius) >= (brick[i][j].position.y - brickSize.y / 2)) &&
+						 ((ball.position.y + ball.radius) <  (brick[i][j].position.y - brickSize.y / 2 + ball.speed.y)) &&
+						/*x = 675*/
 						((fabs(ball.position.x - brick[i][j].position.x)) < (brickSize.x/2 + ball.radius*2/3)) && (ball.speed.y > 0))
 				{
 					brick[i][j].active = false;
