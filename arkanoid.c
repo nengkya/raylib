@@ -1,20 +1,16 @@
 #include <raylib.h>
-<<<<<<< HEAD
-
-
-int main() {
-=======
-#define PLAYER_MAX_LIFE 5
+#define PLAYER_MAX_LIFE  5
+#define LINES_OF_BRICKS  5
+#define BRICKS_PER_LINE 20
 typedef struct Player {Vector2 position; Vector2 size; int life;} Player;
 typedef struct Ball	  {Vector2 position; Vector2 speed; int radius; bool active;} Ball;
-
-
-
-
+typedef struct Brick  {Vector2 position; bool active;} Brick;
 static const int screenWidth  = 1350;
 static const int screenHeight =  650;
 static Player player;
 static Ball ball;
+static Brick brick[LINES_OF_BRICKS][BRICKS_PER_LINE];
+static Vector2 brickSize;
 
 
 void InitGame() {
@@ -26,24 +22,35 @@ void InitGame() {
 	ball.position = (Vector2){player.position.x, player.position.y - player.size.y / 2 - ball.radius };
     ball.radius   = 7;
 
+	brickSize = (Vector2){GetScreenWidth() / BRICKS_PER_LINE, 40 };
+
+	for (int i = 0; i < LINES_OF_BRICKS; i++) {
+        for (int j = 0; j < BRICKS_PER_LINE; j++) {
+
+            brick[i][j].position = (Vector2){j * brickSize.x + brickSize.x / 2,
+				i * brickSize.y + initialDownPosition };
+
+            brick[i][j].active = true;
+
+        }
+    }
+
 }
 
 
 void UpdateGame() {
 
->>>>>>> 6c2adafa15189d6edacb4ba4d6f13718e8119d9d
 
 
 
 
 }
-<<<<<<< HEAD
-=======
 
 
 void DrawGame() {
 
-	DrawRectangle(player.position.x - player.size.x / 2, player.position.y - player.size.y / 2, player.size.x, player.size.y, YELLOW);
+	DrawRectangle(player.position.x - player.size.x / 2, player.position.y - player.size.y / 2,
+		player.size.x, player.size.y, YELLOW);
 
 	DrawCircleV(ball.position, ball.radius, MAROON);
 
@@ -56,9 +63,6 @@ void UpdateDrawFrame() {
     UpdateGame();
     DrawGame();
 }
-
-
-
 
 
 int main() {
@@ -76,4 +80,3 @@ int main() {
 
 
 }
->>>>>>> 6c2adafa15189d6edacb4ba4d6f13718e8119d9d
