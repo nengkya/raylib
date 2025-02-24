@@ -15,7 +15,7 @@ static Vector2 brickSize;
 
 void InitGame() {
 
-	player.position = (Vector2){ screenWidth /  2, screenHeight * 7 / 8};
+	player.position = (Vector2){screenWidth / 2, screenHeight * 7 / 8};
     player.size		= (Vector2){ screenWidth / 10, 20};
     player.life		= PLAYER_MAX_LIFE;
 
@@ -23,7 +23,8 @@ void InitGame() {
     ball.radius   = 7;
 
 	brickSize = (Vector2){GetScreenWidth() / BRICKS_PER_LINE, 40 };
-
+	int initialDownPosition = 50;
+	
 	for (int i = 0; i < LINES_OF_BRICKS; i++) {
         for (int j = 0; j < BRICKS_PER_LINE; j++) {
 
@@ -53,6 +54,21 @@ void DrawGame() {
 		player.size.x, player.size.y, YELLOW);
 
 	DrawCircleV(ball.position, ball.radius, MAROON);
+
+	for (int i = 0; i < LINES_OF_BRICKS; i++) {
+		for (int j = 0; j < BRICKS_PER_LINE; j++) 
+		{
+			if (brick[i][j].active) {
+				
+				if ((i + j) % 2 == 0)
+					 DrawRectangle(brick[i][j].position.x - brickSize.x/2, brick[i][j].position.y - brickSize.y/2, brickSize.x, brickSize.y, GRAY);
+				else DrawRectangle(brick[i][j].position.x - brickSize.x/2, brick[i][j].position.y - brickSize.y/2, brickSize.x, brickSize.y, DARKGRAY);
+			}
+		}
+	}
+
+
+
 
 	EndDrawing();
 
